@@ -1,6 +1,7 @@
 {
   "User": {
-    "name": { "string": {} },
+    "name": { "regexp": "[A-Z][a-z]{5,10}" },
+    "email": { "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}" },
     "posts": {
       "hasMany": "Post"
     }
@@ -15,7 +16,7 @@
     }
   },
   "Comment": {
-    "body": { "string": {} },
+    "body": { "loremSentences": { "minLength": 100, "maxLength": 200 } },
     "post": {
       "belongsTo": "Post"
     }
